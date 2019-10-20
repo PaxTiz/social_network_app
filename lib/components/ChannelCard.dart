@@ -7,6 +7,8 @@ class ChannelCard extends StatelessWidget {
 	
 	ChannelCard(this.planet);
 	
+	// TODO : IMPROVE CHANNEL CARD DESIGN
+	
 	@override
   	Widget build(BuildContext context) {
     	return Container(

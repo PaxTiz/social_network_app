@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_network/screens/HomeScreen.dart';
+import 'package:social_network/screens/auth/WelcomeScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,11 +33,11 @@ class MyApp extends StatelessWidget {
 					)
 				),
 			),
-//			home: OnBoardingScreen(),
-			home: DefaultTabController(
-				length: 3,
-				child: HomeScreen(),
-			)
+			home: WelcomeScreen(),
+//			home: DefaultTabController(
+//				length: 3,
+//				child: WelcomeScreen(),
+//			)
 		);
 	}
 }

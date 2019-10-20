@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +24,7 @@ class ChannelDescriptionCard extends StatelessWidget {
 								onPressed: () {
 								
 								},
-							)
+							),
 						],
 					),
 					Container(
@@ -33,8 +35,8 @@ class ChannelDescriptionCard extends StatelessWidget {
 							children: <Widget>[
 								Row(
 									children: <Widget>[
-										Icon(Icons.people, color: Colors.blue,),
-										Text("1000", style: TextStyle(color: Colors.blue),)
+										Icon(Icons.check, color: Colors.green,),
+										Text("1000 (Majorité des avis positifs)", style: TextStyle(color: Colors.green),)
 									],
 								),
 								Row(

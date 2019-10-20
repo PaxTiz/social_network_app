@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_indicator/page_indicator.dart';
+import 'package:social_network/screens/HomeScreen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
 	
@@ -22,7 +23,9 @@ class OnBoardingScreen extends StatelessWidget {
 									child: RaisedButton(
 										child: Text("Passer l'introduction"),
 										onPressed: () {
-										
+											Navigator.push(context, MaterialPageRoute(
+												builder: (context) => HomeScreen()
+											));
 										},
 									),
 								),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:social_network/screens/HomeScreen.dart';
+import 'package:social_network/screens/auth/RegisterScreen.dart';
 
 class LoginScreen extends StatelessWidget {
 	
@@ -15,7 +16,14 @@ class LoginScreen extends StatelessWidget {
 					mainAxisAlignment: MainAxisAlignment.center,
 					crossAxisAlignment: CrossAxisAlignment.start,
 					children: <Widget>[
-						Text("Abyss"),
+						Center(
+							child: Text("ABYSS", style: TextStyle(
+								color: Colors.blue,
+								fontSize: 36
+							),),
+						),
+						Container(height: 80,),
+						
 						Text("Numéro de téléphone", style: TextStyle(color: Colors.blue),),
 						TextFormField(
 							keyboardType: TextInputType.phone,
@@ -54,13 +62,26 @@ class LoginScreen extends StatelessWidget {
 						),
 						Container(height: 30,),
 						
-						RaisedButton(
-							child: Text("Connexion"),
-							onPressed: () {
-								Navigator.pushReplacement(context, MaterialPageRoute(
-									builder: (context) => HomeScreen()
-								));
-							},
+						Row(
+							mainAxisAlignment: MainAxisAlignment.spaceBetween,
+							children: <Widget>[
+								RaisedButton(
+									child: Text("Connexion"),
+									onPressed: () {
+										Navigator.pushReplacement(context, MaterialPageRoute(
+											builder: (context) => HomeScreen()
+										));
+									},
+								),
+								GestureDetector(
+									child: Text("Pas encore de compte ?", style: TextStyle(color: Colors.blue),),
+									onTap: () {
+										Navigator.pushReplacement(context, MaterialPageRoute(
+											builder: (context) => RegisterScreen()
+										));
+									},
+								)
+							],
 						)
 					],
 				),

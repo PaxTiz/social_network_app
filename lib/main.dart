@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:social_network/screens/HomeScreen.dart';
 import 'package:social_network/screens/auth/WelcomeScreen.dart';
 
 void main() => runApp(MyApp());

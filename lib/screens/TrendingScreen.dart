@@ -1,53 +1,59 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:social_network/components/ChannelCard.dart';
+import 'package:social_network/components/SpecialChannelCard.dart';
+import 'package:social_network/planets.dart';
 
 class TrendingScreen extends StatelessWidget {
-	
-	final images = [
-		"https://cdn0.iconfinder.com/data/icons/flat-design-galaxy/1701/Dots1-512.png",
-		"https://cdn0.iconfinder.com/data/icons/flat-design-galaxy/1701/Planets2-512.png",
-		"https://cdn.iconscout.com/icon/premium/png-256-thumb/planet-290-815536.png",
-		"https://cdn0.iconfinder.com/data/icons/flat-design-galaxy/1701/Dots2-512.png",
-		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_6i3I9fnNTD8kif5T7qWsIbm7l9be-UnEqdv1t3_Kd2dM_2ou",
-		"https://cdn0.iconfinder.com/data/icons/flat-design-galaxy/1701/Saturn1-512.png"
-	];
-	
-	final planets = [
-		{
-			"name": "Earth",
-			"description": "This channel is about our so beautiful planet, the Earth !",
-			"nbPeopleInside": 12,
-			"nbPeopleSubscribe": 1000,
-			"image": "https://cdn0.iconfinder.com/data/icons/flat-design-galaxy/1701/Dots1-512.png"
-		}
-	];
-	
+
 	@override
-	Widget build(BuildContext context) {
-		return Container(
-			child: Container(
-				decoration: BoxDecoration(
-					gradient: LinearGradient(
-						colors: [Color.fromRGBO(34, 39, 54, 1), Color.fromRGBO(21, 21, 53, 1)],
-						begin: AlignmentDirectional.topCenter,
-						end: AlignmentDirectional.bottomCenter
-					)
-				),
-				
-				width: MediaQuery.of(context).size.width,
-				height: MediaQuery.of(context).size.height,
-				padding: EdgeInsets.all(20),
-				
-				child: ListView.builder(
-					shrinkWrap: true,
-					itemCount: planets.length,
-					itemBuilder: (BuildContext ctx, int i) {
-						return ChannelCard(planets[i]);
-					},
+  	Widget build(BuildContext context) {
+    	return Container(
+			color: Color.fromRGBO(27, 31, 58, 1),
+
+			width: MediaQuery.of(context).size.width,
+			height: MediaQuery.of(context).size.height,
+			padding: EdgeInsets.all(20),
+			
+			child: SingleChildScrollView(
+				child: Column(
+					mainAxisSize: MainAxisSize.min,
+					children: <Widget>[
+						SizedBox(
+							height: 200,
+							child: ListView(
+								physics: ClampingScrollPhysics(),
+								shrinkWrap: true,
+								scrollDirection: Axis.horizontal,
+								children: <Widget>[
+									SpecialChannelCard(
+										title: "Mars",
+										image: "mars.png",
+										description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper fringilla nisi et porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut euismod elit id orci mattis consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+									),
+									SpecialChannelCard(
+										title: "Jupyter",
+										image: "space.jpg",
+										description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper fringilla nisi et porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut euismod elit id orci mattis consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+									)
+								],
+							),
+						),
+						Flexible(
+							child: ListView.builder(
+								physics: NeverScrollableScrollPhysics(),
+								shrinkWrap: true,
+								itemCount: planets.length,
+								itemBuilder: (ctx, i) {
+									return ChannelCard(planets[i]);
+								}
+							),
+						)
+					],
 				),
 			)
 		);
-	}
+  	}
 }

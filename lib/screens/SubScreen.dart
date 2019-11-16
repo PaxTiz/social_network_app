@@ -4,13 +4,19 @@ import 'package:flutter/widgets.dart';
 import 'package:social_network/components/ChannelCard.dart';
 import 'package:social_network/planets.dart';
 
-class FavoritesScreen extends StatelessWidget {
+class SubScreen extends StatelessWidget {
 
 	@override
-  	Widget build(BuildContext context) {
-    	return Container(
+	Widget build(BuildContext context) {
+		return Container(
 			child: Container(
-				color: Color.fromRGBO(27, 31, 58, 1),
+				decoration: BoxDecoration(
+					gradient: LinearGradient(
+						colors: [Color.fromRGBO(34, 39, 54, 1), Color.fromRGBO(21, 21, 53, 1)],
+						begin: AlignmentDirectional.topCenter,
+						end: AlignmentDirectional.bottomCenter
+					)
+				),
 				
 				width: MediaQuery.of(context).size.width,
 				height: MediaQuery.of(context).size.height,
@@ -25,5 +31,5 @@ class FavoritesScreen extends StatelessWidget {
 				),
 			)
 		);
-  	}
+	}
 }

@@ -33,10 +33,6 @@ class MyApp extends StatelessWidget {
 				),
 			),
 			home: WelcomeScreen(),
-//			home: DefaultTabController(
-//				length: 3,
-//				child: WelcomeScreen(),
-//			)
 		);
 	}
 }

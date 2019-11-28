@@ -12,7 +12,6 @@ class SpecialChannelCard extends StatelessWidget {
     	return GestureDetector(
 			child: Container(
 				width: MediaQuery.of(context).size.width - 40,
-				height: 300,
 				margin: EdgeInsets.only(bottom: 20),
 				padding: EdgeInsets.all(20),
 				alignment: Alignment.topLeft,
@@ -23,21 +22,24 @@ class SpecialChannelCard extends StatelessWidget {
 					),
 					borderRadius: BorderRadius.circular(20)
 				),
-				child: Column(
-					children: <Widget>[
-						Text(title, style: TextStyle(
-							color: Colors.white,
-							fontWeight: FontWeight.bold,
-							fontSize: 24,
-						),),
-						Text(description,
-							style: TextStyle(
+				child: Center(
+					child: Column(
+						mainAxisSize: MainAxisSize.min,
+						children: <Widget>[
+							Text(title, style: TextStyle(
 								color: Colors.white,
-							),
-							textAlign: TextAlign.center,
-						)
-					],
-				),
+								fontWeight: FontWeight.bold,
+								fontSize: 24,
+							),),
+							Text(description,
+								style: TextStyle(
+									color: Colors.white,
+								),
+								textAlign: TextAlign.center,
+							)
+						],
+					),
+				)
 			),
 		);
   	}
